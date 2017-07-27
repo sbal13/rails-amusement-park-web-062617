@@ -1,0 +1,10 @@
+<%if @user.admin%>
+	<%= link_to "New Attraction", new_attraction_path%>
+<%end%>
+
+<%@attractions.each do |attraction|%>
+	<h2>Name: <%= attraction.name%></h2>
+	<p>Tickets: <%= attraction.tickets%></p>
+	<p><%= link_to "#{@message} #{attraction.name}", attraction_path(attraction)%></p>
+<%end%>
+

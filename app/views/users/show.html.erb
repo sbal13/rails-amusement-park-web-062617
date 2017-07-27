@@ -1,0 +1,16 @@
+
+
+<%if @user.admin%>
+	<h3>ADMIN</h3>
+<%end %>
+<%= flash[:message] %>
+
+<h3>Name: <%= @user.name%> </h3><br>
+<h3>Tickets: <%= @user.tickets%> </h3><br>
+<h3>Mood: <%= @user.mood%> </h3><br>
+<h3>Height: <%= @user.height%> </h3><br>
+
+
+
+<%= link_to "See attractions", attractions_path, id: 'See attractions'%>
+
