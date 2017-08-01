@@ -1,10 +1,10 @@
-<%if @user.admin%>
-	<%= link_to "New Attraction", new_attraction_path%>
-<%end%>
+
 
 <%@attractions.each do |attraction|%>
-	<h2>Name: <%= attraction.name%></h2>
-	<p>Tickets: <%= attraction.tickets%></p>
-	<p><%= link_to "#{@message} #{attraction.name}", attraction_path(attraction)%></p>
+	<div class='panel panel-default col-md-4'>
+		<h2><%= attraction.name%></h2>
+		<p>Tickets: <%= attraction.tickets%></p>
+		<p><%= button_to "#{@message} #{attraction.name}", attraction_path(attraction), method: :get, class: 'btn-primary btn-xs'%></p>
+	</div>
 <%end%>
 

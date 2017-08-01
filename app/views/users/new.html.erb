@@ -1,19 +1,45 @@
 <%= form_for :user, url: users_path do |f|%>
-	<%= label_tag :name%>
-	<%= f.text_field :name%><br>
-	<%= label_tag :height%>
-	<%= f.number_field :height%><br>
-	<%= label_tag :happiness%>
-	<%= f.number_field :happiness%><br>
-	<%= label_tag :nausea%>
-	<%= f.number_field :nausea%><br>
-	<%= label_tag :tickets%>
-	<%= f.number_field :tickets%><br>
-	<%= label_tag :password%>
-	<%= f.password_field :password%><br>
-<!-- 	<%= label_tag :password_confirmation%>
-	<%= f.password_field :password_confirmation%><br> -->
-	<%= label_tag :admin%>
-	<%= f.check_box :admin%><br>
-	<%= f.submit "Create User"%>
+	<div class='row'>
+		<div class='col-md-4'>
+			<%= label_tag :name%>
+			<%= f.text_field :name, class: "form-control"%>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-4'>
+			<%= label_tag :height%>
+			<%= f.number_field :height, class: "form-control"%>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='col-md-4'>
+			<%= label_tag :happiness%>
+			<%= f.number_field :happiness, class: "form-control"%>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-4'>
+			<%= label_tag :nausea%>
+			<%= f.number_field :nausea, class: "form-control"%>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-4'>
+			<%= label_tag :tickets%>
+			<%= f.number_field :tickets, class: "form-control"%>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-4'>
+			<%= label_tag :password%>
+			<%= f.password_field :password, class: "form-control"%>
+		</div>
+	</div>
+	<div class='checkbox'>
+		<%= label_tag :admin%>
+		<%= f.check_box :admin%>
+	</div>
+	<button type="submit" class="btn btn-primary">Create User</button>
+
 <%end%>

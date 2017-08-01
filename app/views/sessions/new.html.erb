@@ -1,7 +1,17 @@
-<%= form_for :user, url: authenticate_path do |f|%>
-	<%= label_tag :name%>
-	<%= f.text_field :name%><br>
-	<%= label_tag :password%>
-	<%= f.password_field :password%><br>
-	<%= f.submit "Sign In"%>
-<% end %>
+
+	<%= flash[:message] if flash[:message]%>
+	<%= form_for :user, url: authenticate_path do |f|%>
+		<div class='row'>
+			<div class="form-group col-md-4">
+			<%= label_tag :name%>
+			<%= f.text_field :name, class: "form-control"%><br>
+			</div>
+		</div>
+		<div class='row'>
+			<div class="form-group col-md-4">
+			<%= label_tag :password%>
+			<%= f.password_field :password, class: "form-control"%><br>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Sign In</button>
+	<% end %>

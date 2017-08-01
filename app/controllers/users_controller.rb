@@ -4,12 +4,12 @@ class UsersController < ApplicationController
 	end
 
 	def create
-
 		@user = User.create(user_params) 
 		if @user
 			session[:user_id] = @user.id
 			redirect_to user_path(@user)
 		else
+			flash[:message] = "Incorrect Info!"
 			redirect_to new_user_path
 		end
 	end
